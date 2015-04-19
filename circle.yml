@@ -37,4 +37,4 @@ deployment:
       - ./node_modules/.bin/gulp build
       - mkdir build
       - mv ./dist ./build/$CIRCLE_SHA1/
-      - aws s3 sync build s3://foobank/ --acl public-read
+      - aws s3 sync build s3://foobar-bank-deploy/ --acl public-read
