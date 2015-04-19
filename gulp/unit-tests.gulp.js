@@ -6,7 +6,7 @@ var $ = require('gulp-load-plugins')();
 
 var wiredep = require('wiredep');
 
-gulp.task('test', function() {
+gulp.task('test', ['config'], function() {
   var bowerDeps = wiredep({
     directory: 'src/bower_components',
     dependencies: true,
