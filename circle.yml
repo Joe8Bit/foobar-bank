@@ -30,9 +30,11 @@ test:
     # Run selenium tests
     - npm run e2e-sauce
 
-# deployment:
-#   production:
-#     branch: master
-#     commands:
-#       - ./node_modules/.bin/gulp build
-#       - aws s3 sync build s3://teachdigital.io/ --delete --acl public-read
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./node_modules/.bin/gulp build
+      - mkdir build
+      - mv ./dist ./build/$CIRCLE_SHA1/
+      - aws s3 sync build s3://foobank/ --acl public-read
