@@ -3,8 +3,9 @@
 angular.module('foobank')
   .controller('TransferCtrl', [
     '$location',
+    '$translate',
     'TransferSrv',
-    function($location, TransferSrv) {
+    function($location, $translate, TransferSrv) {
 
       /**
        * Set our UI state to successful
@@ -34,7 +35,8 @@ angular.module('foobank')
       _.extend(this, {
         create: create,
         transferCreateSuccess: transferCreateSuccess,
-        transferCreateFailure: transferCreateFailure
+        transferCreateFailure: transferCreateFailure,
+        translate: $translate.use
       });
 
     }]);

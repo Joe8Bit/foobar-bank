@@ -6,6 +6,7 @@ angular.module('foobank', [
   'ngTouch',
   'ngSanitize',
   'ngRoute',
+  'pascalprecht.translate',
   'ConfigModule'
   ])
   .config([
