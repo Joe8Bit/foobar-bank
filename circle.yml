@@ -11,6 +11,8 @@ dependencies:
     - ~/nvm
 
 test:
+  pre:
+    - np run config
   override:
     - npm run hint
     - npm run codestyle
