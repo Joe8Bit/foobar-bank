@@ -17,7 +17,7 @@ test:
     - npm run hint
     - npm run codestyle
     - npm run test
-    - npm run e2e
+    - npm run circle-e2e
 
 # deployment:
 #   production:
