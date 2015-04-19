@@ -38,3 +38,7 @@ deployment:
       - mkdir build
       - mv ./dist ./build/$CIRCLE_SHA1/
       - aws s3 sync build s3://foobar-bank-deploy/ --acl public-read
+
+notify:
+  webhooks:
+    - url: https://zapier.com/hooks/catch/b4eg7h/
