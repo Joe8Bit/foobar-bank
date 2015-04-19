@@ -4,10 +4,18 @@ exports.config = {
   sauceUser: process.env.SAUCE_USERNAME,
   sauceKey: process.env.SAUCE_ACCESS_KEY,
 
-  // Capabilities to be passed to the webdriver instance.
-  capabilities: {
-    browserName: 'chrome'
-  },
+  // Capabilities to be passed to the saucelabs webdriver instance.
+  multiCapabilities: [{
+    browserName: 'firefox',
+  }, {
+    browserName: 'chrome',
+  }, {
+    browserName: 'iphone',
+  }, {
+    browserName: 'ipad'
+  }, {
+    browserName 'android'
+  }],
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.
