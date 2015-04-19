@@ -4,6 +4,7 @@ machine:
 
 dependencies:
   pre:
+    - bower install
     - sudo pip install awscli==1.7.8
     - npm prune
   cache_directories:
