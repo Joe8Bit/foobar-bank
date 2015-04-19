@@ -12,7 +12,7 @@ dependencies:
 
 test:
   pre:
-    - np run config
+    - npm run config
   override:
     - npm run hint
     - npm run codestyle
