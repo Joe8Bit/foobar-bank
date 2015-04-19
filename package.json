@@ -7,14 +7,14 @@
     "url": "https://github.com/Joe8Bit/foobank.git"
   },
   "scripts": {
-    "hint": "gulp hint",
-    "codestyle": "gulp codestyle",
-    "test": "gulp test",
-    "complexity": "gulp complexity",
-    "e2e": "gulp protractor",
+    "hint": "./node_modules/.bin/gulp hint",
+    "codestyle": "./node_modules/.bin/gulp codestyle",
+    "test": "./node_modules/.bin/gulp test",
+    "complexity": "./node_modules/.bin/gulp complexity",
+    "e2e": "./node_modules/.bin/gulp protractor",
     "docs": "./node_modules/doxx/bin/doxx --template ./docs/template.jade --source . --ignore node_modules,coverage,test,config,src/bower_components,gulp,.tmp --target docs",
-    "scss-lint": "gulp scss-lint",
-    "validate": "gulp validate"
+    "scss-lint": "./node_modules/.bin/gulp scss-lint",
+    "validate": "./node_modules/.bin/gulp validate"
   },
   "homepage": "https://github.com/Joe8Bit/foobank",
   "bugs": {

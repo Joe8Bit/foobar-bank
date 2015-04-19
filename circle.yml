@@ -1,0 +1,24 @@
+machine:
+  node:
+    version: 0.10.33
+
+dependencies:
+  pre:
+    - sudo pip install awscli==1.7.8
+    - npm prune
+  cache_directories:
+    - ~/nvm
+
+test:
+  override:
+    - npm run hint
+    - npm run codestyle
+    - npm run test
+    - npm run e2e
+
+# deployment:
+#   production:
+#     branch: master
+#     commands:
+#       - ./node_modules/.bin/gulp build
+#       - aws s3 sync build s3://teachdigital.io/ --delete --acl public-read
