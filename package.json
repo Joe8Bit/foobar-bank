@@ -13,7 +13,7 @@
     "test": "./node_modules/.bin/gulp test",
     "complexity": "./node_modules/.bin/gulp complexity",
     "e2e": "./node_modules/.bin/gulp protractor",
-    "e2e:sauce": "./node_modules/.bin/gulp protractor:sauce",
+    "e2e-sauce": "./node_modules/.bin/gulp protractor:sauce",
     "docs": "./node_modules/doxx/bin/doxx --template ./docs/template.jade --source . --ignore node_modules,coverage,test,config,src/bower_components,gulp,.tmp --target docs",
     "scss-lint": "./node_modules/.bin/gulp scss-lint",
     "validate": "./node_modules/.bin/gulp validate"
