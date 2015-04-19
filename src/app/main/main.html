@@ -1,31 +1,31 @@
 <section class="container" id="login">
 
   <div id="info">
-    <h1>Foo</h1>
-    <h2>Your digital bank</h2>
-    <p>Foo Bank is part of a new generation of banks that put its' customers digital needs first. Login now too:</p>
+    <h1>{{ 'BRAND' | translate }}</h1>
+    <h2 id="tagline">{{ 'TAG_LINE' | translate }}</h2>
+    <p>{{ 'BLURB' | translate }}</p>
     <ul>
-      <li>View and create transfers</li>
+      <li>{{ 'FEATURE_1' | translate }}</li>
     </ul>
   </div>
 
   <form novalidate class="simple-form" id="login-form">
 
-    <p ng-show="main.error" class="error">{{main.error}}</p>
+    <p ng-show="main.error" class="error">{{ main.error | translate }}</p>
 
-    <label for="username">Username</label>
+    <label for="username">{{ 'USERNAME' | translate }}</label>
     <input type="text" name="username" id="username" ng-model="main.user.username" />
 
-    <label for="password">Password</label>
+    <label for="password">{{ 'PASSWORD' | translate }}</label>
     <input type="password" name="password" id="password" ng-model="main.user.password">
 
-    <input type="submit" ng-click="main.login(main.user)" value="Login" class="login" />
+    <input type="submit" ng-click="main.login(main.user)" value="{{ 'LOGIN' | translate }}" class="login" />
 
   </form>
 
 </section>
 
 <footer>
-  <div id="not-real">This is not a real bank</div>
+  <div id="not-real">{{ 'NOT_REAL_BANK' | translate }} <a href="" ng-click="main.translate('en')" id="translate-english">EN</a> | <a href="" ng-click="main.translate('tr')" id="translate-turkish">TR</a></div>
   <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
 </footer>

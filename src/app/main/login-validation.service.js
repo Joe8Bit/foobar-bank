@@ -4,16 +4,6 @@ angular.module('foobank')
   .service('LoginValidationSrv', function LoginValidationSrv() {
 
     /**
-     * A canned set of responses
-     * @type {Object}
-     */
-    var messages = {
-      user: 'You must enter a username and password',
-      username: 'You must enter a username',
-      password: 'You must enter a password'
-    };
-
-    /**
      * Checks the existence of the user object
      * @param  {Object} user The user object
      * @return {Boolean}      Whether it is valid or not
@@ -46,9 +36,9 @@ angular.module('foobank')
      * @return {Object}      A validation object
      */
     function _validate(user) {
-      return _.chain([[validateUserObject, 'user'], [validateUsername, 'username'], [validatePassword, 'password']])
+      return _.chain([[validateUserObject, 'USER_ERROR'], [validateUsername, 'USERNAME_ERROR'], [validatePassword, 'PASSWORD_ERROR']])
               .map(function(validator) {
-                return (!validator[0](user)) ? { valid: false, message: messages[validator[1]] } : { valid: true };
+                return (!validator[0](user)) ? { valid: false, message: validator[1] } : { valid: true };
               })
               .find({valid: false})
               .value();

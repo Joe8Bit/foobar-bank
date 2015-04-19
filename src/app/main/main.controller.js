@@ -3,9 +3,10 @@
 angular.module('foobank')
   .controller('MainCtrl', [
     '$location',
+    '$translate',
     'LoginValidationSrv',
     'UserSrv',
-    function($location, LoginValidationSrv, UserSrv) {
+    function($location, $translate, LoginValidationSrv, UserSrv) {
 
       /**
        * Method to set an error into th current scope
@@ -43,7 +44,8 @@ angular.module('foobank')
       _.extend(this, {
         login: login,
         setError: setError,
-        loginSuccess: loginSuccess
+        loginSuccess: loginSuccess,
+        translate: $translate.use
       });
 
     }]);

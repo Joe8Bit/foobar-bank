@@ -1,27 +1,27 @@
 <div class="container" id="transfer">
 
   <header>
-    <a href="/dashboard" id="back">&laquo; Back to dashboard</a>
-    <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
+    <a href="/dashboard" id="back">&laquo; {{ 'BACK_TO_DASHBOARD' | translate }}</a>
+    <a href="" ng-click="dashboard.logout()" id="logout">{{ 'LOGOUT' | translate }}</a>
   </header>
 
   <form novalidate class="simple-form" id="transfer-form">
 
-    <p class="success" ng-show="newTransfer.success" id="transfer-success">Your transfer was made</p>
-    <p class="error" ng-show="newTransfer.error">There was an error processing your tranfer</p>
+    <p class="success" ng-show="newTransfer.success" id="transfer-success">{{ 'TRANSFER_SUCCESS' | translate }}</p>
+    <p class="error" ng-show="newTransfer.error">{{ 'TRANSFER_FAILURE' | translate }}</p>
 
-    <label for="amount">Transfer amount</label>
+    <label for="amount">{{ 'TRANSFER_AMOUNT' | translate }}</label>
     <input type="number" name="amount" id="amount" ng-model="newTransfer.transfer.amount" />
 
-    <label for="to">To account</label>
+    <label for="to">{{ 'TO_ACCOUNT' | translate }}</label>
     <input type="text" name="account" id="account" ng-model="newTransfer.transfer.account" />
 
-    <input type="submit" ng-click="newTransfer.create(newTransfer.transfer)" value="Transfer" class="transfer" />
+    <input type="submit" ng-click="newTransfer.create(newTransfer.transfer)" value="{{ 'TRANSFER' | translate }}" class="transfer" />
 
   </form>
 </div>
 
 <footer>
-  <div id="not-real">This is not a real bank</div>
+  <div id="not-real">{{ 'NOT_REAL_BANK' | translate }} <a href="" ng-click="newTransfer.translate('en')">EN</a> | <a href="" ng-click="newTransfer.translate('tr')">TR</a></div>
   <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
 </footer>

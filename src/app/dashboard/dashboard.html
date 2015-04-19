@@ -1,23 +1,23 @@
 <div class="container" id="dashboard">
 
   <header>
-    <h2 id="desktop">Welcome to your online banking dashboard</h2>
-    <h2 id="mobile">Welcome</h2>
-    <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
+    <h2 id="desktop">{{ 'WELCOME_DESKTOP' | translate }}</h2>
+    <h2 id="mobile">{{ 'WELCOME_MOBILE' | translate }}</h2>
+    <a href="" ng-click="dashboard.logout()" id="logout">{{ 'LOGOUT' | translate }}</a>
   </header>
 
   <section id="transfer-container">
 
     <div id="transfer-header">
-      <h3>Recent transfers</h3>
-      <a href="/dashboard/transfer" id="transfer">New transfer &raquo;</a>
+      <h3>{{ 'RECENT_TRANSFERS' | translate }}</h3>
+      <a href="/dashboard/transfer" id="transfer">{{ 'NEW_TRANSFER' | translate }} &raquo;</a>
     </div>
 
     <table ng-show="dashboard.transfers.length" id="transfer-list">
       <tr>
-        <th>Amount</th>
-        <th>Account</th>
-        <th>Date</th>
+        <th>{{ 'AMOUNT' | translate }}</th>
+        <th>{{ 'ACCOUNT' | translate }}</th>
+        <th>{{ 'DATE' | translate }}</th>
       </tr>
       <tr ng-repeat="tra in dashboard.transfers" id="transfer-{{tra.id}}">
         <td class="amount" id="transfer-{{tra.id}}-amount">{{tra.amount | currency:"₺"}}</td>
@@ -31,6 +31,6 @@
 </div>
 
 <footer>
-  <div id="not-real">This is not a real bank</div>
+  <div id="not-real">{{ 'NOT_REAL_BANK' | translate }} <a href="" ng-click="dashboard.translate('en')">EN</a> | <a href="" ng-click="dashboard.translate('tr')">TR</a></div>
   <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
 </footer>
