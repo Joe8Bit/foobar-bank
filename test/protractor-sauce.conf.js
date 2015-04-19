@@ -6,15 +6,15 @@ exports.config = {
 
   // Capabilities to be passed to the saucelabs webdriver instance.
   multiCapabilities: [{
-    browserName: 'firefox',
+    browserName: 'firefox'
   }, {
-    browserName: 'chrome',
+    browserName: 'chrome'
   }, {
-    browserName: 'iphone',
+    browserName: 'iphone'
   }, {
     browserName: 'ipad'
   }, {
-    browserName 'android'
+    browserName: 'android'
   }],
 
   // Spec patterns are relative to the current working directly when
