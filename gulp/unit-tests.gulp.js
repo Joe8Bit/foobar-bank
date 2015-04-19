@@ -1,10 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-
 var $ = require('gulp-load-plugins')();
-
 var wiredep = require('wiredep');
+var expect = require('gulp-expect-file');
+var path = require('path');
 
 gulp.task('test', ['config'], function() {
   var bowerDeps = wiredep({
