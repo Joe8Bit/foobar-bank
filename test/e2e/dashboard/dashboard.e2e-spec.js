@@ -41,7 +41,7 @@ describe('The foobank', function() {
     var transfer3 = new GetTransferByIndex(3);
 
     transfer.getAmount(function(amount) {
-      expect(amount).toBe('398.45');
+      expect(amount).toBe('₺398.45');
     });
 
     transfer.getAccount(function(account) {
@@ -49,7 +49,7 @@ describe('The foobank', function() {
     });
 
     transfer2.getAmount(function(amount) {
-      expect(amount).toBe('38');
+      expect(amount).toBe('₺38.00');
     });
 
     transfer2.getAccount(function(account) {
@@ -57,7 +57,7 @@ describe('The foobank', function() {
     });
 
     transfer3.getAmount(function(amount) {
-      expect(amount).toBe('102');
+      expect(amount).toBe('₺102.00');
     });
 
     transfer3.getAccount(function(account) {

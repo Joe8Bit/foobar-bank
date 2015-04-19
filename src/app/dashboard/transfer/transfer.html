@@ -1,9 +1,11 @@
-<div id="container">
-  <h1>Make transfer</h1>
+<div class="container" id="transfer">
 
-  <form novalidate class="simple-form">
-
+  <header>
     <a href="/dashboard" id="back">&laquo; Back to dashboard</a>
+    <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
+  </header>
+
+  <form novalidate class="simple-form" id="transfer-form">
 
     <p class="success" ng-show="newTransfer.success" id="transfer-success">Your transfer was made</p>
     <p class="error" ng-show="newTransfer.error">There was an error processing your tranfer</p>
@@ -18,3 +20,8 @@
 
   </form>
 </div>
+
+<footer>
+  <div id="not-real">This is not a real bank</div>
+  <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
+</footer>
