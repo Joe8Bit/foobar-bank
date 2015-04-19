@@ -7,14 +7,12 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    browserName: 'firefox'
+    browserName: 'chrome'
   },
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.
   specs: ['test/e2e/**/*.js'],
-
-  directConnect: true,
 
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {

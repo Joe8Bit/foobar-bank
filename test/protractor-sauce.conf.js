@@ -1,15 +1,12 @@
 // An example configuration file.
 exports.config = {
 
-  // The address of a running selenium server.
-  //seleniumAddress: 'http://localhost:4444/wd/hub',
-  seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.45.0.jar',
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    browserName: 'phantomjs',
-    'phantomjs.binary.path': require('phantomjs').path,
-    'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+    browserName: 'chrome'
   },
 
   // Spec patterns are relative to the current working directly when
