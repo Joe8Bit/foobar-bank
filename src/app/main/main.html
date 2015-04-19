@@ -1,12 +1,20 @@
-<div id="container">
-  <h1>Welcome to the Foo Bank!</h1>
+<section class="container" id="login">
+
+  <div id="info">
+    <h1>Foo</h1>
+    <h2>Your digital bank</h2>
+    <p>Foo Bank is part of a new generation of banks that put its' customers digital needs first. Login now too:</p>
+    <ul>
+      <li>View and create transfers</li>
+    </ul>
+  </div>
 
   <form novalidate class="simple-form">
 
     <p ng-show="main.error" class="error">{{main.error}}</p>
 
     <label for="username">Username</label>
-    <input type="text" name="username" id="password" ng-model="main.user.username" />
+    <input type="text" name="username" id="username" ng-model="main.user.username" />
 
     <label for="password">Password</label>
     <input type="password" name="password" id="password" ng-model="main.user.password">
@@ -14,4 +22,10 @@
     <input type="submit" ng-click="main.login(main.user)" value="Login" class="login" />
 
   </form>
-</div>
+
+</section>
+
+<footer>
+  <div id="not-real">This is not a real bank</div>
+  <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
+</footer>
