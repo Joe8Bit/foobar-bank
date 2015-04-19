@@ -31,6 +31,27 @@ gulp.task('protractor-only', ['webdriver-update', 'wiredep'], function (done) {
     });
 });
 
+gulp.task('protractor-phantom', ['webdriver-update', 'wiredep'], function (done) {
+  var testFiles = [
+    'test/e2e/**/*.js'
+  ];
+
+  gulp.src(testFiles)
+    .pipe($.protractor.protractor({
+      configFile: 'test/protractor-phantom.conf.js',
+    }))
+    .on('error', function (err) {
+      // Make sure failed tests cause gulp to exit non-zero
+      throw err;
+    })
+    .on('end', function () {
+      // Close browser sync server
+      browserSync.exit();
+      done();
+    });
+});
+
+gulp.task('circle-e2e', ['config', 'serve:e2e', 'protractor-phantom']);
 gulp.task('protractor', ['config', 'serve:e2e', 'protractor-only']);
 gulp.task('protractor:src', ['config', 'serve:e2e', 'protractor-only']);
 gulp.task('protractor:dist', ['config', 'serve:e2e-dist', 'protractor-only']);
