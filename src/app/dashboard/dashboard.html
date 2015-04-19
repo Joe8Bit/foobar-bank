@@ -1,21 +1,36 @@
-<div id="container">
-  <h1>eBanking Dashboard</h1>
+<div class="container" id="dashboard">
 
-  <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
+  <header>
+    <h2 id="desktop">Welcome to your online banking dashboard</h2>
+    <h2 id="mobile">Welcome</h2>
+    <a href="" ng-click="dashboard.logout()" id="logout">Logout</a>
+  </header>
 
-  <table ng-show="dashboard.transfers.length" id="transfer-list">
-    <tr>
-      <th>Amount</th>
-      <th>Account</th>
-      <th>Date</th>
-    </tr>
-    <tr ng-repeat="tra in dashboard.transfers" id="transfer-{{tra.id}}">
-      <td class="amount" id="transfer-{{tra.id}}-amount">{{tra.amount}}</td>
-      <td class="acount" id="transfer-{{tra.id}}-account">{{tra.account}}</td>
-      <td class="date" id="transfer-{{tra.id}}-date">{{tra.date | date:'dd/MM/yyyy @ h:mma'}}</td>
-    </tr>
-  </table>
+  <section id="transfer-container">
 
-  <a href="/dashboard/transfer" id="transfer">New transfer</a>
+    <div id="transfer-header">
+      <h3>Recent transfers</h3>
+      <a href="/dashboard/transfer" id="transfer">New transfer &raquo;</a>
+    </div>
+
+    <table ng-show="dashboard.transfers.length" id="transfer-list">
+      <tr>
+        <th>Amount</th>
+        <th>Account</th>
+        <th>Date</th>
+      </tr>
+      <tr ng-repeat="tra in dashboard.transfers" id="transfer-{{tra.id}}">
+        <td class="amount" id="transfer-{{tra.id}}-amount">{{tra.amount | currency:"₺"}}</td>
+        <td class="acount" id="transfer-{{tra.id}}-account">{{tra.account}}</td>
+        <td class="date" id="transfer-{{tra.id}}-date">{{tra.date | date:'MM/dd/yyyy @ h:mma'}}</td>
+      </tr>
+    </table>
+
+  </section>
 
 </div>
+
+<footer>
+  <div id="not-real">This is not a real bank</div>
+  <div id="github"><a href="https://github.com/Joe8Bit/foo-bank">github.com/Joe8Bit/foo-bank</a></div>
+</footer>

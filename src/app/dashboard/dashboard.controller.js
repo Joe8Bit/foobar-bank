@@ -18,7 +18,10 @@ angular.module('foobank')
 
       _.extend(this, {
         logout: logout,
-        transfers: transfers.data.transfers
+        transfers: _.map(transfers.data.transfers, function(transfer) {
+          transfer.date = new Date(transfer.date);
+          return transfer;
+        })
       });
 
     }]);

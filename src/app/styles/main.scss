@@ -23,6 +23,27 @@ $core-font-size: 13px;
   }
 }
 
+@mixin button() {
+  display: block;
+  border: 3px solid $orange;
+  border-radius: 4rem;
+  padding: 0.5rem 1.5rem;
+  color: $orange;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: $core-font-size / 1.3;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    background: $orange;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -67,6 +88,82 @@ footer {
   background: $white-bg;
   border-radius: 3px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+
+  &#dashboard {
+    max-width: 100%;
+    margin: 1rem;
+
+    header {
+      @include clearfix();
+      color: $light-gray-text;
+      border-bottom: 1px solid $light-gray;
+      padding: 1rem;
+
+      h2 {
+        float: left;
+        font-weight: normal;
+        font-size: $core-font-size / 0.8;
+        margin: 0.5rem 0 0;
+
+        &#mobile {
+          display: none;
+        }
+      }
+
+      #logout {
+        @include button();
+        float: right;
+      }
+    }
+
+    #transfer-container {
+      padding: 1.5rem 1rem;
+
+      #transfer-header {
+        @include clearfix();
+        margin-bottom: 1rem;
+        
+        h3 {
+          color: $orange;
+          font-size: $core-font-size;
+          text-transform: uppercase;
+          margin: 0;
+          float: left;
+        }
+
+        a {
+          float: right;
+          color: $orange;
+          font-size: $core-font-size / 0.9;
+          text-decoration: none;
+          border-bottom: 1px dotted $orange;
+
+          &:hover,
+          &:active,
+          &:focus {
+            outline: none;
+            border-bottom: 1px solid $orange;
+          }
+        }
+      }
+
+      #transfer-list {
+        width: 50%;
+
+        th {
+          text-align: left;
+          color: $light-gray-text;
+          text-transform: uppercase;
+          font-size: $core-font-size / 1.1;
+        }
+
+        td {
+          padding: 0.3rem 0;
+        }
+      }
+
+    }
+  }
 
   #info {
     float: left;
@@ -155,24 +252,8 @@ footer {
     }
 
     .login {
-      display: block;
-      border: 3px solid $orange;
-      background: $white-bg;
-      border-radius: 4rem;
-      padding: 0.5rem 1.5rem;
-      color: $orange;
-      text-transform: uppercase;
-      font-size: $core-font-size / 1.3;
+      @include button();
       margin-top: 2rem;
-
-      &:hover,
-      &:active,
-      &:focus {
-        outline: none;
-        background: $orange;
-        color: #fff;
-        cursor: pointer;
-      }
     }
   }
 
@@ -201,7 +282,7 @@ footer {
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: portrait) { 
       max-width: 90%;
-      margin: 1rem auto;
+      margin: 2rem auto;
 
       #info,
       form {
@@ -226,6 +307,35 @@ footer {
           left: 0px;
         }
       }
+
+      &#dashboard {
+  
+        margin: 2rem 1rem;
+
+        header {
+
+          h2#desktop {
+            display: none;
+          }
+
+          h2#mobile {
+            display: block;
+          }
+
+        }
+
+        #transfer-container {
+
+          #transfer-list {
+            width: 100%;
+
+            td {
+              font-size: $core-font-size / 1.1;
+            }
+          }
+
+        }
+      }
   }
 
   // Phone Landscape
@@ -235,7 +345,7 @@ footer {
     and (-webkit-min-device-pixel-ratio: 2)
     and (orientation: landscape) { 
       max-width: 90%;
-      margin: 1rem auto;
+      margin: 2rem auto;
 
       #info {
         h1 {
