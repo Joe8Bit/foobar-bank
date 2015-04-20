@@ -7,6 +7,7 @@ angular.module('foobank', [
   'ngSanitize',
   'ngRoute',
   'pascalprecht.translate',
+  'feature-flags',
   'ConfigModule'
   ])
   .config([
@@ -17,7 +18,12 @@ angular.module('foobank', [
         .when('/', {
           templateUrl: 'app/main/main.html',
           controller: 'MainCtrl',
-          controllerAs: 'main'
+          controllerAs: 'main',
+          resolve: {
+            features: function(FeatureFlagsSrv) {
+              return FeatureFlagsSrv.init();
+            }
+          }
         })
         .when('/dashboard', {
           templateUrl: 'app/dashboard/dashboard.html',
@@ -32,6 +38,10 @@ angular.module('foobank', [
 
             transfers: function(TransferSrv) {
               return TransferSrv.get();
+            },
+
+            offers: function(OffersSrv) {
+              return OffersSrv.get();
             }
           }
         })

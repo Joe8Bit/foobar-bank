@@ -10,7 +10,12 @@ gulp.task('test', ['config'], function() {
   var bowerDeps = wiredep({
     directory: 'src/bower_components',
     dependencies: true,
-    devDependencies: true
+    devDependencies: true,
+    overrides: {
+      "angular-feature-flags": {
+        "main": "dist/featureFlags.js"
+      }
+    }
   });
 
   var testFiles = bowerDeps.js.concat([

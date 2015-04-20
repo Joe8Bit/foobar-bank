@@ -7,6 +7,12 @@
     "transfer": {
       "get": "transfer/",
       "create": "transfer/"
+    },
+    "features": {
+      "get": "feature-flags/"
+    },
+    "offers": {
+      "get": "offers/"
     }
   }
 }

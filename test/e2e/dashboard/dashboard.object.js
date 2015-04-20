@@ -9,6 +9,10 @@ function getLogoutLink() {
   return element(by.css('#logout'));
 }
 
+function getOffer() {
+  return element(by.css('#offer'));
+}
+
 var GetTransferByIndex = function(index) {
 
   this.getAmount = function(next) {
@@ -28,5 +32,6 @@ var GetTransferByIndex = function(index) {
 module.exports = {
   getTransferLink: getTransferLink,
   getLogoutLink: getLogoutLink,
-  GetTransferByIndex: GetTransferByIndex
+  GetTransferByIndex: GetTransferByIndex,
+  getOffer: getOffer
 };

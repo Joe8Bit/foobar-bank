@@ -5,8 +5,9 @@ angular.module('foobank')
     '$location',
     '$translate',
     'transfers',
+    'offers',
     'UserSrv',
-    function($location, $translate, transfers, UserSrv) {
+    function($location, $translate, transfers, offers, UserSrv) {
 
       /**
        * Destroys a user session
@@ -23,7 +24,9 @@ angular.module('foobank')
         transfers: _.map(transfers.data.transfers, function(transfer) {
           transfer.date = new Date(transfer.date);
           return transfer;
-        })
+        }),
+
+        offers: offers.data
       });
 
     }]);

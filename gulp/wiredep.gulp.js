@@ -14,7 +14,12 @@ gulp.task('wiredep', function () {
 
   gulp.src('src/*.html')
     .pipe(wiredep({
-      directory: 'src/bower_components'
+      directory: 'src/bower_components',
+      overrides: {
+        "angular-feature-flags": {
+          "main": "dist/featureFlags.js"
+        }
+      }
     }))
     .pipe(gulp.dest('src'));
 });

@@ -9,3 +9,5 @@ var shmock = require('shmock'),
 mock.post('/api/session/').persist().reply(201, require('./mock_data/create-session'));
 mock.get('/api/session/0394oiljeljkdrd/transfer/').persist().reply(200, require('./mock_data/get-transfer'));
 mock.post('/api/session/0394oiljeljkdrd/transfer/').persist().reply(200);
+mock.get('/api/feature-flags').persist().reply(200, require('./mock_data/feature-flags'));
+mock.get('/api/offers').persist().reply(200, require('./mock_data/offers'));

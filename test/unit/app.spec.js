@@ -18,6 +18,12 @@ describe('Routes test with resolves', function() {
   }));
 
   it('should load the login page on successful load of /', inject(function() {
+    httpBackend.expectGET('/api/feature-flags/').respond(200, [{
+      key: 'offers',
+      active: true,
+      name: 'Dashboard Offers',
+      description: 'Shows the user offers from within the bank they might be intersted in'
+    }]);
     httpBackend.expectGET('app/main/main.html').respond(200, 'Main template!');
     $location.path('/');
     $rootScope.$digest();
@@ -30,6 +36,11 @@ describe('Routes test with resolves', function() {
     UserSrv.setSession('1234');
     httpBackend.expectGET('/api/session/1234/transfer/').respond(200, {
       foo: 'bar'
+    });
+    httpBackend.expectGET('/api/offers/').respond(200, {
+      id: 1,
+      href: 'http://foobarbank.com/offer',
+      text: 'Take advantage of our great home insurance rates today!'
     });
     httpBackend.expectGET('app/dashboard/dashboard.html').respond(200, 'Dashboard template!');
 
@@ -54,7 +65,18 @@ describe('Routes test with resolves', function() {
   it('should rediect to the index if no session exists when requesting the dashboard', inject(function() {
     UserSrv.setSession(undefined);
     httpBackend.expectGET('/api/session//transfer/').respond(404);
+    httpBackend.expectGET('/api/offers/').respond(200, {
+      id: 1,
+      href: 'http://foobarbank.com/offer',
+      text: 'Take advantage of our great home insurance rates today!'
+    });
     httpBackend.expectGET('app/dashboard/dashboard.html').respond(200, 'Dashboard template!');
+    httpBackend.expectGET('/api/feature-flags/').respond(200, [{
+      key: 'offers',
+      active: true,
+      name: 'Dashboard Offers',
+      description: 'Shows the user offers from within the bank they might be intersted in'
+    }]);
     httpBackend.expectGET('app/main/main.html').respond(200, 'Dashboard template!');
 
     $location.path('/dashboard');
@@ -67,6 +89,12 @@ describe('Routes test with resolves', function() {
   it('should rediect to the index if no session exists when requesting the transfer page', inject(function() {
     UserSrv.setSession(undefined);
     httpBackend.expectGET('app/dashboard/transfer/transfer.html').respond(200, 'Transfer template!');
+    httpBackend.expectGET('/api/feature-flags/').respond(200, [{
+      key: 'offers',
+      active: true,
+      name: 'Dashboard Offers',
+      description: 'Shows the user offers from within the bank they might be intersted in'
+    }]);
     httpBackend.expectGET('app/main/main.html').respond(200, 'Dashboard template!');
 
     $location.path('/dashboard/transfer');

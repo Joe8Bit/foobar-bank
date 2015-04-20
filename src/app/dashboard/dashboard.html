@@ -6,6 +6,10 @@
     <a href="" ng-click="dashboard.logout()" id="logout">{{ 'LOGOUT' | translate }}</a>
   </header>
 
+  <section id="offers" feature-flag="offers">
+    <a href="{{::dashboard.offers.href}}}}" id="offer">{{::dashboard.offers.text}}</a>
+  </section>
+
   <section id="transfer-container">
 
     <div id="transfer-header">

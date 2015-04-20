@@ -23,6 +23,13 @@ describe('The Dashboard controller', function() {
           }]
         }
       },
+      offers: {
+        data: {
+          id: 1,
+          href: 'http://foobarbank.com/offer',
+          text: 'Take advantage of our great home insurance rates today!'
+        }
+      },
       UserSrv: UserSrv
     });
   }));

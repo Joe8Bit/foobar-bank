@@ -2,6 +2,7 @@ $dark-blue: #192B37;
 $orange: #e26b67;
 $white-bg: #fff;
 $light-gray: #ccc;
+$dark-gray: #444;
 $red: #8d2f2c;
 $green: #2c8d5e;
 
@@ -173,6 +174,17 @@ footer {
           border-bottom: 1px solid $orange;
           outline: none;
         }
+      }
+    }
+
+    #offers {
+      margin: 1rem 1rem 0;
+      padding: .5rem 1rem;
+      background: $light-gray;
+      font-size: $core-font-size / 1.2;
+
+      a {
+        color: $dark-gray
       }
     }
 

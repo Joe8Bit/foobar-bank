@@ -20,7 +20,6 @@ describe('The Main controller', function() {
 
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
-
     $location = {
       path: sinon.spy()
     };
