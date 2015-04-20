@@ -69,7 +69,7 @@ describe('The foobank', function() {
   it('should show a user an offer', function() {
     // We need to login to create a session on this page
     loginPage.enterDetailsAndSubmitForm('Username', 'Password');
-    
+
     dashboardPage.getOffer().getText().then(function(text) {
       expect(text).toBe('Take advantage of our great home insurance rates today!');
     });
