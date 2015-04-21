@@ -1,0 +1,12 @@
+{
+  "api": {
+    "base": "https://peaceful-reef-1735.herokuapp.com/api/",
+    "session": {
+      "create": "session/"
+    },
+    "transfer": {
+      "get": "transfer/",
+      "create": "transfer/"
+    }
+  }
+}

@@ -6,11 +6,12 @@ var gulp 		 			= require('gulp'),
 		insert 		 		= require('gulp-insert'),
 		replace 	 		= require('gulp-replace-task'),
 		path					= require('path'),
-		expect 				= require('gulp-expect-file');
+		expect 				= require('gulp-expect-file'),
+		argv 					= require('minimist')(process.argv.slice(2));
 
-gulp.task('config' ,function () {
+gulp.task('config' , function() {
 	gulp.src(path.join('.', 'config', 'defaults.json'))
-		.pipe(gulpNgConfig('ConfigModule', require(path.join('..', 'config', (process.env.NODE_ENV || 'development')))))
+		.pipe(gulpNgConfig('ConfigModule', require(path.join('..', 'config', (argv.e || process.env.FINAL_BUILD || process.env.NODE_ENV || 'development')))))
 		.pipe(rename('config.constant.js'))
 		.pipe(insert.prepend('/* jshint ignore:start */\n'))
 		.pipe(insert.append('/* jshint ignore:end */'))
