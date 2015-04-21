@@ -35,7 +35,7 @@ deployment:
     branch: master
     commands:
       - ./node_modules/.bin/gulp build
-      - aws s3 sync dist s3://foobar/ --acl public-read
+      - aws s3 sync dist s3://foobar/ --delete --acl public-read
 
 notify:
   webhooks:
