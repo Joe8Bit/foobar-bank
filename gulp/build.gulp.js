@@ -81,7 +81,7 @@ gulp.task('html', ['style-build', 'scripts', 'partials'], function () {
     }))
     .pipe(htmlFilter.restore())
     .pipe(gulp.dest('dist'))
-    .pipe($.size());
+    .pipe($.size())
 });
 
 gulp.task('images', function () {
@@ -107,4 +107,4 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.rimraf());
 });
 
-gulp.task('build', ['html', 'partials', 'images', 'fonts']);
+gulp.task('build', ['config', 'html', 'partials', 'images', 'fonts']);
