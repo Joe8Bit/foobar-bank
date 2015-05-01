@@ -7,7 +7,7 @@ var dashboardPage = require('../dashboard/dashboard.object');
 describe('The foobank', function() {
 
   beforeEach(function() {
-    browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/login');
     loginPage.enterDetailsAndSubmitForm('Username', 'Password');
     dashboardPage.getTransferLink().click();
   });

@@ -19,6 +19,11 @@ angular.module('foobank', [
           controller: 'MainCtrl',
           controllerAs: 'main'
         })
+        .when('/login', {
+          templateUrl: 'app/login/login.html',
+          controller: 'LoginCtrl',
+          controllerAs: 'login'
+        })
         .when('/dashboard', {
           templateUrl: 'app/dashboard/dashboard.html',
           controller: 'DashboardCtrl',
@@ -26,7 +31,7 @@ angular.module('foobank', [
           resolve: {
             auth: function(UserSrv, $location) {
               if (!UserSrv.getSession()) {
-                $location.path('/');
+                $location.path('/login');
               }
             },
 
@@ -42,7 +47,7 @@ angular.module('foobank', [
           resolve: {
             auth: function(UserSrv, $location) {
               if (!UserSrv.getSession()) {
-                $location.path('/');
+                $location.path('/login');
               }
             }
           }

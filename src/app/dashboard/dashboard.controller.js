@@ -14,7 +14,7 @@ angular.module('foobank')
        */
       function logout() {
         UserSrv.destroySession();
-        $location.path('/');
+        $location.path('/login');
       }
 
       _.extend(this, {

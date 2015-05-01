@@ -7,7 +7,7 @@ var GetTransferByIndex = dashboardPage.GetTransferByIndex;
 describe('The foobank', function() {
 
   beforeEach(function() {
-    browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/login');
   });
 
   it('should allow a user to navigate to the transfer page', function() {
@@ -25,11 +25,11 @@ describe('The foobank', function() {
 
     expect(dashboardPage.getLogoutLink()).not.toBeUndefined();
     dashboardPage.getLogoutLink().click();
-    expect(browser.getLocationAbsUrl()).toBe('/');
+    expect(browser.getLocationAbsUrl()).toBe('/login');
 
-    // Going nack shouldn't work
+    // Going back shouldn't work
     browser.get('http://localhost:3000/dashboard');
-    expect(browser.getLocationAbsUrl()).toBe('/');
+    expect(browser.getLocationAbsUrl()).toBe('/login');
   });
 
   it('should list a set of transactions', function() {

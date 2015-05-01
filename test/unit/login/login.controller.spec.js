@@ -1,8 +1,8 @@
 'use strict';
 
-describe('The Main controller', function() {
+describe('The Login controller', function() {
   var scope;
-  var MainCtrl;
+  var LoginCtrl;
   var $location;
   var UserSrv;
 
@@ -38,7 +38,7 @@ describe('The Main controller', function() {
       setSession: sinon.stub()
     };
 
-    MainCtrl = $controller('MainCtrl', {
+    LoginCtrl = $controller('LoginCtrl', {
       $scope: scope,
       $location: $location,
       LoginValidationSrv: LoginValidationSrv,
@@ -48,19 +48,19 @@ describe('The Main controller', function() {
   }));
 
   it('should expose the correct properties to the view', inject(function() {
-    expect(MainCtrl).not.toBeUndefined();
-    expect(MainCtrl.login).not.toBeUndefined();
-    expect(MainCtrl.loginSuccess).not.toBeUndefined();
-    expect(MainCtrl.setError).not.toBeUndefined();
+    expect(LoginCtrl).not.toBeUndefined();
+    expect(LoginCtrl.login).not.toBeUndefined();
+    expect(LoginCtrl.loginSuccess).not.toBeUndefined();
+    expect(LoginCtrl.setError).not.toBeUndefined();
   }));
 
   it('should set an error into the scope', inject(function() {
-    MainCtrl.setError('An error');
-    expect(MainCtrl.error).toBe('An error');
+    LoginCtrl.setError('An error');
+    expect(LoginCtrl.error).toBe('An error');
   }));
 
   it('should redirect to the dashboard when successfully logged in', inject(function() {
-    MainCtrl.loginSuccess({
+    LoginCtrl.loginSuccess({
       data: {
         id: 'lfjlk'
       }
@@ -71,7 +71,7 @@ describe('The Main controller', function() {
   }));
 
   it('call the login service if user is valid', inject(function() {
-    MainCtrl.login({
+    LoginCtrl.login({
       username: 'foo',
       password: 'bar'
     });
@@ -80,7 +80,7 @@ describe('The Main controller', function() {
   }));
 
   it('call the error service if user is not valid', inject(function() {
-    MainCtrl.login(undefined);
+    LoginCtrl.login(undefined);
     expect(LoginValidationSrv.validate.called).toBeTruthy();
     expect(UserSrv.createSession.called).toBe(false);
   }));

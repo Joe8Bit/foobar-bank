@@ -5,7 +5,7 @@ var loginPage = require('./login.object');
 describe('The foobank', function() {
 
   beforeEach(function() {
-    browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/login');
   });
 
   it('should show a generic message if nothing is entered and form is submitted', function() {

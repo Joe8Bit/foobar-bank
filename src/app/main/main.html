@@ -1,27 +1,6 @@
-<section class="container" id="login">
+<section class="container" id="landing">
 
-  <div id="info">
-    <h1>{{ 'BRAND' | translate }}</h1>
-    <h2 id="tagline">{{ 'TAG_LINE' | translate }}</h2>
-    <p>{{ 'BLURB' | translate }}</p>
-    <ul>
-      <li>{{ 'FEATURE_1' | translate }}</li>
-    </ul>
-  </div>
-
-  <form novalidate class="simple-form" id="login-form">
-
-    <p ng-show="main.error" class="error">{{ main.error | translate }}</p>
-
-    <label for="username">{{ 'USERNAME' | translate }}</label>
-    <input type="text" name="username" id="username" ng-model="main.user.username" />
-
-    <label for="password">{{ 'PASSWORD' | translate }}</label>
-    <input type="password" name="password" id="password" ng-model="main.user.password">
-
-    <input type="submit" ng-click="main.login(main.user)" value="{{ 'LOGIN' | translate }}" class="login" />
-
-  </form>
+  <h1>Landing page</h1>
 
 </section>
 

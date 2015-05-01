@@ -55,25 +55,25 @@ describe('Routes test with resolves', function() {
     UserSrv.setSession(undefined);
     httpBackend.expectGET('/api/session//transfer/').respond(404);
     httpBackend.expectGET('app/dashboard/dashboard.html').respond(200, 'Dashboard template!');
-    httpBackend.expectGET('app/main/main.html').respond(200, 'Dashboard template!');
+    httpBackend.expectGET('app/login/login.html').respond(200, 'Login template!');
 
     $location.path('/dashboard');
     $rootScope.$digest();
 
-    expect($location.path()).toBe('/');
-    expect($route.current.controller).toBe('MainCtrl');
+    expect($location.path()).toBe('/login');
+    expect($route.current.controller).toBe('LoginCtrl');
   }));
 
   it('should rediect to the index if no session exists when requesting the transfer page', inject(function() {
     UserSrv.setSession(undefined);
     httpBackend.expectGET('app/dashboard/transfer/transfer.html').respond(200, 'Transfer template!');
-    httpBackend.expectGET('app/main/main.html').respond(200, 'Dashboard template!');
+    httpBackend.expectGET('app/login/login.html').respond(200, 'Login template!');
 
     $location.path('/dashboard/transfer');
     $rootScope.$digest();
 
-    expect($location.path()).toBe('/');
-    expect($route.current.controller).toBe('MainCtrl');
+    expect($location.path()).toBe('/login');
+    expect($route.current.controller).toBe('LoginCtrl');
   }));
 
   afterEach(function() {

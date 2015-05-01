@@ -7,7 +7,7 @@ var transferPage = require('../transfer/transfer.object');
 describe('The foobank', function() {
 
   beforeEach(function() {
-    browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/login');
   });
 
   it('the user should signin, make a transfer and go back to the dashboard and then logout', function() {
@@ -29,7 +29,7 @@ describe('The foobank', function() {
     expect(browser.getLocationAbsUrl()).toBe('/dashboard');
 
     dashboardPage.getLogoutLink().click();
-    expect(browser.getLocationAbsUrl()).toBe('/');
+    expect(browser.getLocationAbsUrl()).toBe('/login');
 
   });
 

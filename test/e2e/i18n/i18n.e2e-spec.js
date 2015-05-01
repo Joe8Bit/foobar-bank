@@ -5,7 +5,7 @@ var i18n = require('./i18n.object');
 describe('The foobank', function() {
 
   beforeEach(function() {
-    browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/login');
   });
 
   it('should load English as the default language', function() {
