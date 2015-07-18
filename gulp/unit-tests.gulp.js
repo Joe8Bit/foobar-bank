@@ -5,8 +5,9 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep');
 var expect = require('gulp-expect-file');
 var path = require('path');
+var Server = require('karma').Server;
 
-gulp.task('test', ['config'], function() {
+gulp.task('test', ['config'], function(done) {
   var bowerDeps = wiredep({
     directory: 'src/bower_components',
     dependencies: true,
@@ -19,12 +20,8 @@ gulp.task('test', ['config'], function() {
   ]);
 
   return gulp.src(testFiles)
-    .pipe($.karma({
-      configFile: 'test/karma.conf.js',
-      action: 'run'
-    }))
-    .on('error', function(err) {
-      // Make sure failed tests cause gulp to exit non-zero
-      throw err;
-    });
+    new Server({
+      configFile: __dirname + '/karma.conf.js',
+      singleRun: true
+    }, done).start();
 });

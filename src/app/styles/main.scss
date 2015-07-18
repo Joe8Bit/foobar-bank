@@ -126,7 +126,7 @@ footer {
 .container {
   @include clearfix();
   max-width: 50%;
-  margin: 10rem auto 0;
+  margin: 8rem auto 0;
   background: $white-bg;
   border-radius: 3px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
@@ -445,5 +445,16 @@ footer {
 
         }
       }
+  }
+}
+
+#landing {
+  h1 {
+    margin: 1rem;
+  }
+  a {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    color: $orange;
   }
 }

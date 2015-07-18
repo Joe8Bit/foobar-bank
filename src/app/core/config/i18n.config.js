@@ -11,9 +11,9 @@ angular.module('foobank')
       LOGOUT: 'Logout',
 
       // Landing page
-      BRAND: 'Foo',
+      BRAND: 'Foobar',
       TAG_LINE: 'Your digital bank',
-      BLURB: 'Foo Bank is part of a new generation of banks that put its\' customers digital needs first. Login now too:',
+      BLURB: 'Foobar Bank is part of a new generation of banks that put its\' customers digital needs first. Login now too:',
       FEATURE_1: 'View and create transfers',
       USERNAME: 'Username',
       PASSWORD: 'Password',

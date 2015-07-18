@@ -94,5 +94,8 @@
     "codestyle",
     "test",
     "e2e"
-  ]
+  ],
+  "dependencies": {
+    "gulp-karma": "0.0.4"
+  }
 }
