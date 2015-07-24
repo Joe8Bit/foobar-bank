@@ -20,15 +20,17 @@ test:
     - npm run hint
     - npm run codestyle
     - npm run test
-    - ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -f ~/sc_ready:
-        background: true
-        pwd: sc-*-linux
-    # Wait for tunnel to be ready
-    - while [ ! -e ~/sc_ready ]; do sleep 1; done
-    - ./node_modules/.bin/gulp serve:e2e:
-        background: true
-    # Run selenium tests
-    - npm run e2e-sauce
+    - ./scripts/performance.sh
+    - ./scripts/security.sh
+    # - ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -f ~/sc_ready:
+    #     background: true
+    #     pwd: sc-*-linux
+    # # Wait for tunnel to be ready
+    # - while [ ! -e ~/sc_ready ]; do sleep 1; done
+    # - ./node_modules/.bin/gulp serve:e2e:
+    #     background: true
+    # # Run selenium tests
+    # - npm run e2e-sauce
 
 deployment:
   production:
