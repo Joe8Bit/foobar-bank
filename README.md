@@ -1,4 +1,4 @@
-## Protractor testing workshop
+## Foobar Bank
 
 Contained in this repo is a simple Angular application that uses patterns and anti-patterns for doing E2E testing with Protractor.
 
