@@ -1,0 +1,8 @@
+{
+  "name": "Foobar Bank",
+  "description": "A sample application by MDL",
+  "repository": "https://github.com/Joe8Bit/foobar-bank",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
