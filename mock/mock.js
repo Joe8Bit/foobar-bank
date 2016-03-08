@@ -3,7 +3,7 @@
 // https://github.com/xetorthio/shmock
 
 var shmock = require('shmock'),
-	port = process.env.PORT || 8080,
+	port = process.env.PORT || 8100,
 	mock = shmock(port);
 
 mock.post('/api/session/').persist().reply(201, require('./mock_data/create-session'));
