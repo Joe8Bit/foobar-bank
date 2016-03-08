@@ -1,6 +1,6 @@
 {
   "api": {
-    "base": "https://peaceful-reef-1735.herokuapp.com/api/",
+    "base": "https://foobank.herokuapp.com/api/",
     "session": {
       "create": "session/"
     },
